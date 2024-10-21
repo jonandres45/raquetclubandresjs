@@ -1,0 +1,171 @@
+body{
+    background-color: #f3f4f8;
+}
+
+.container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 5em;
+    margin-bottom: 5em;
+    align-items: center;
+    padding: 10px;
+}
+
+.btnAboutBlack{
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 12px;
+    padding: 15px 25px;
+    margin-top: 4em;
+    color: black;
+    cursor: pointer;
+}
+
+.btnNext{
+    background-color: #CFE262;
+    border: 1px solid #CFE262;
+    padding: 15px 20px;
+    margin-top: 4em;
+    color: white;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+
+
+.btnBefore{
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 50%;
+    padding: 15px 20px;
+    margin-top: 4em;
+    color: white;
+    cursor: pointer;
+}
+
+.container > div > h2 {
+    font-size: 3rem;
+    font-weight: 100;
+    color: black;
+}
+
+.textGreen {
+    color: #CFE262;
+}
+
+.m-rigth {
+    margin-right: 10px;
+}
+
+.m-left {
+    margin-left: 10px;
+}
+
+.m-lg-top{
+    margin-top: 25px;
+}
+
+.text-grey{
+    color: grey;
+}
+
+.container-slider{ /* Contenedor del slider */
+    position: relative;
+    flex: 30%;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 70%;
+    left: 35%; 
+    transform: translate(-0%, -100%); 
+    color: white;
+    font-size: 1 ;
+}
+
+.container-items{
+    flex: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.small-circle {
+    width: 15px;  
+    height: 15px; 
+    background-color: white; 
+    border-radius: 50%;
+    margin-top: 15px;
+    margin-right: 10px;
+}
+
+.small-circle-active {
+    width: 15px;  
+    height: 15px; 
+    background-color: #CFE262; 
+    border-radius: 50%;
+    margin-top: 15px;
+    margin-right: 10px;
+}
+
+
+.container-img-item{
+    position: relative;
+    height: auto;
+    width: 20rem;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.btnAdd{
+    background-color: #CFE262;
+    border: 1px solid #CFE262;
+    padding: 10px 15px;
+    margin-top: 4em;
+    color: white;
+    cursor: pointer;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 0%; 
+    left: 10%; 
+    transform: translate(-0%, -100%);
+}
+
+.title{
+    color: white;
+    font-size: 2rem;
+}
+
+.subtitle{
+    color: white;
+    font-size: 1.3rem;
+}
+
+@media (max-width: 1300px) {
+    .container-img-item{
+        width: 15rem;
+    }
+    .container-slider{
+        flex: 40%;
+    }
+    .container-items{
+        flex: 60%;
+    }
+
+}
+
+@media (max-width: 800px) {
+    .container-slider{
+        flex: 100%;
+    }
+    .container-items{
+        flex: 100%;
+    }
+    .container-img-item{
+          width: 13rem;
+    }
+
+}

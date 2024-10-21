@@ -1,0 +1,133 @@
+{{ 'footerpersonal.css' | asset_url | stylesheet_tag }}
+    <div class="container">
+        <img src="{{ section.settings.background_image | img_url: 'original' }}" alt="Footer Background Image" width="100%" height="100%">
+        <footer class="bg-footer">
+            <div class="footer-left">
+                <div class="footer-menu">
+                    <a href="{{ section.settings.link_1_url }}">{{ section.settings.link_1_text }}</a>
+                    <a href="{{ section.settings.link_2_url }}">{{ section.settings.link_2_text }}</a>
+                    <a href="{{ section.settings.link_3_url }}">{{ section.settings.link_3_text }}</a>
+                    <a href="{{ section.settings.link_4_url }}">{{ section.settings.link_4_text }}</a>
+                </div>
+                <div class="footer-social">
+                    <a href="{{ section.settings.social_1_url }}"><img src="{{ section.settings.social_1_image | img_url: 'original' }}" alt="Social Icon 1" class="social-icon"></a>
+                    <a href="{{ section.settings.social_2_url }}"><img src="{{ section.settings.social_2_image | img_url: 'original' }}" alt="Social Icon 2" class="social-icon"></a>
+                    <a href="{{ section.settings.social_3_url }}"><img src="{{ section.settings.social_3_image | img_url: 'original' }}" alt="Social Icon 3" class="social-icon"></a>
+                </div>
+            </div>
+            <div class="footer-right">
+                <img src="{{ section.settings.footer_icon | img_url: 'original' }}" alt="Footer Icon" class="footer-icon" width="50%" height="auto">
+            </div>
+        </footer>
+    </div>
+    
+{% schema %}
+{
+  "name": "Footer Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "page_title",
+      "default": "Footer Page",
+      "label": "Page Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Footer Background Image"
+    },
+    {
+      "type": "text",
+      "id": "link_1_text",
+      "default": "Inicio",
+      "label": "Link 1 Text"
+    },
+    {
+      "type": "url",
+      "id": "link_1_url",
+      "label": "Link 1 URL"
+    },
+    {
+      "type": "text",
+      "id": "link_2_text",
+      "default": "Acerca de Nosotros",
+      "label": "Link 2 Text"
+    },
+    {
+      "type": "url",
+      "id": "link_2_url",
+      "label": "Link 2 URL"
+    },
+    {
+      "type": "text",
+      "id": "link_3_text",
+      "default": "Historia",
+      "label": "Link 3 Text"
+    },
+    {
+      "type": "url",
+      "id": "link_3_url",
+      "label": "Link 3 URL"
+    },
+    {
+      "type": "text",
+      "id": "link_4_text",
+      "default": "Contacto",
+      "label": "Link 4 Text"
+    },
+    {
+      "type": "url",
+      "id": "link_4_url",
+      "label": "Link 4 URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "social_1_image",
+      "label": "Social Icon 1 Image"
+    },
+    {
+      "type": "url",
+      "id": "social_1_url",
+      "label": "Social Icon 1 URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "social_2_image",
+      "label": "Social Icon 2 Image"
+    },
+    {
+      "type": "url",
+      "id": "social_2_url",
+      "label": "Social Icon 2 URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "social_3_image",
+      "label": "Social Icon 3 Image"
+    },
+    {
+      "type": "url",
+      "id": "social_3_url",
+      "label": "Social Icon 3 URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "footer_icon",
+      "label": "Footer Icon"
+    },
+    {
+      "type": "text",
+      "id": "css_file",
+      "default": "main.css",
+      "label": "CSS File"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer Personal",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+</html>

@@ -1,0 +1,168 @@
+{{ 'main-tennis.css' | asset_url | stylesheet_tag }}
+
+    <div class="main-container color-{{ section.settings.color_scheme }}">
+        <nav class="row">
+            <div class="vertical-line">
+              {%- if section.settings.logo_image != blank -%}
+                <img src="{{ section.settings.logo_image | img_url: 'original' }}" alt="{{ section.settings.logo_alt }}" class="img-ball" width="10%" height="auto">
+              {%- endif -%}
+            </div>
+            <div class="col">
+                <div class="nav-container">
+                      <div class="menu-nav text-nav"> 
+                          <strong>Inicio</strong>
+                      </div>
+                      <div class="text-nav"> 
+                          <strong>Acerca de nosotros</strong>
+                      </div>
+                      <div class="text-nav"> 
+                          <strong>Historia</strong>
+                      </div>    
+                      <div class="text-nav"> 
+                          <strong>Contacto</strong>
+                      </div>
+                    <div class="container-main-message">
+                        <div class="main-message">
+                            <h1>{{ section.settings.main_heading }} <strong class="text-tennis">{{ section.settings.strong_text }}</strong></h1>
+                            <button class="btnAbout">{{ section.settings.button_text }}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    
+{% schema %}
+{
+  "name": "Custom Navigation Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "page_title",
+      "default": "Page Title",
+      "label": "Page Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_image",
+      "label": "Logo Image"
+    },
+    {
+      "type": "text",
+      "id": "logo_alt",
+      "default": "Logo",
+      "label": "Logo Alt Text"
+    },
+    {
+      "type": "text",
+      "id": "main_heading",
+      "default": "Las mejores raquetas para jugar",
+      "label": "Main Heading"
+    },
+    {
+      "type": "text",
+      "id": "strong_text",
+      "default": "Tennis",
+      "label": "Strong Text"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "default": "ACERCA DE NOSOTROS →",
+      "label": "Button Text"
+    },
+    {
+      "type": "color",
+      "id": "color_scheme",
+      "default": "#ffffff",
+      "label": "Color Scheme"
+    },
+    {
+      "type": "textarea",
+      "id": "menu_items",
+      "label": "Menu Items",
+      "info": "Enter menu items as a JSON array. Example: [{\"label\": \"Inicio\"}, {\"label\": \"Acerca de nosotros\"}, {\"label\": \"Contacto\"}]"
+    },
+    {
+      "type": "text",
+      "id": "css_file",
+      "default": "main.css",
+      "label": "CSS File"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "type": "product",
+      "name": "Product Block",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "checkbox",
+          "id": "second_image",
+          "default": false,
+          "label": "Show Second Image"
+        }
+      ]
+    },
+    {
+      "type": "collection",
+      "name": "Collection Block",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "name": "Video Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "cover_image",
+          "label": "Cover Image"
+        },
+        {
+          "type": "video_url",
+          "id": "video_url",
+          "accept": ["youtube", "vimeo"],
+          "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+          "label": "Video URL",
+          "placeholder": "Enter the URL of the video",
+          "info": "Provide a YouTube or Vimeo URL."
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "default": "Description of the video",
+          "label": "Video Description"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "personal"
+    }
+  ]
+}
+{% endschema %}
